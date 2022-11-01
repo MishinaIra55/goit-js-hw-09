@@ -11,3 +11,7 @@ btnStart.addEventListener('click', ()=> {
       document.body.style.backgroundColor = getRandomHexColor();
    }, 1000);
 });
+
+btnStop.addEventListener('click', ()=> {
+   clearInterval(timerId);
+});
