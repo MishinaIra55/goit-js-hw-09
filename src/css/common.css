@@ -10,9 +10,23 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background: #b6d2ec;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.value {
+  padding: 10px;
+  border-radius: 3px;
+  background: #0076bf;
+  display: flex;
+  width: 175px;
+  justify-content: center;
+}
+
+#datetime-picker{
+  margin-bottom: 20px;
 }
