@@ -45,9 +45,8 @@ const timer = {
             clearInterval(this.timerId);
             return;
          } 
-            const timeComponents = convertMs(deltaTime);
-            updateClockface(timeComponents);
-         
+         const timeComponents = convertMs(deltaTime);
+         updateClockface(timeComponents);
          console.log(timeComponents);
       }, 1000);
    },
