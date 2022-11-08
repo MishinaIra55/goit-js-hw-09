@@ -1,9 +1,9 @@
-import Notiflix from 'notiflix';//подключила библиотеку
+import Notiflix from 'notiflix'; //подключила библиотеку
 
-const form = document.querySelector('.form');//достучалась до формы
+const form = document.querySelector('.form'); //достучалась до формы
 
 // console.log(form);
-form.addEventListener('submit', OnSubmitAction);//навешала слушателя
+form.addEventListener('submit', OnSubmitAction); //навешала слушателя
 
 //логика увеличения delay на step
 function OnSubmitAction(event) {
@@ -13,23 +13,22 @@ function OnSubmitAction(event) {
   const delay = document.querySelector('input[name = "delay"]').value;
   const step = document.querySelector('input[name = "step"]').value;
 
-  for (let i = 1; i <= amount; i+= 1) {
-  
+  for (let i = 1; i <= amount; i += 1) {
     let numberdelay = Number(delay);
     let numberstep = Number(step);
-    
-  setTimeout(() => {
-    console.log(i, numberdelay, numberstep);
 
     setTimeout(() => {
-      createPromise(i, numberdelay + numberstep * i )
-      .then(onSuccess)
-      .catch(onError);
-    }, numberdelay);
-  }, numberstep);
+      console.log(i, numberdelay, numberstep);
 
-  form.reset();
-}
+      setTimeout(() => {
+        createPromise(i, numberdelay + numberstep * i)
+          .then(onSuccess)
+          .catch(onError);
+      }, numberdelay);
+    }, numberstep);
+
+    form.reset();
+  }
 }
 
 function onError(data) {
@@ -50,7 +49,6 @@ function createPromise(position, delay) {
       } else {
         reject(`❌ Rejected promise ${position} in ${delay}ms`);
       }
-      
     }, delay);
   });
 }
